@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
+        integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-5" style="border: 1px solid black;">
+        <div class="container-fluid">
+            <span class="navbar-brand">Admin Login/Register</span>
+            <div>
+                <button class="btn btn-outline me-2" onclick="showSection('arrays')">login</button>
+                <button class="btn btn-outline me-2" onclick="showSection('dom')">register</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="max-width: 450px;">
+        <!-- login Form -->
+        <div class="row section section-active" id="login">
+            <div class="col-md-12 mb-5">
+                <div class="section section-active">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="" method="post">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div id="register" class="section section-active">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="" method="post">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" name="password" id="password" class="form-control">
+                                <label for="password" class="form-label">Confirm password</label>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
