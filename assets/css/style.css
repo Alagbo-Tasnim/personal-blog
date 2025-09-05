@@ -1,0 +1,16 @@
+#aside {
+    background: linear-gradient(135deg, #79df79, #a176a1);
+}
+#nav {
+    background: linear-gradient(135deg, #79df79, #a176a1);
+}
+.card {
+    background: linear-gradient(135deg, #79df79, #a176a1);
+}
+img {
+    transition: transform 0.3s;
+    border-radius: 7px;
+}
+img:hover {
+    transform: scale(1.05);
+}
