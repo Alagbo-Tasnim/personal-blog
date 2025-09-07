@@ -1,11 +1,11 @@
 #aside {
-    background: linear-gradient(135deg, #79df79, #a176a1);
+    background: linear-gradient(135deg, #ff8f8f, #c63e3e);
 }
 #nav {
-    background: linear-gradient(135deg, #79df79, #a176a1);
+    background: linear-gradient(135deg, #ff8f8f, #c63e3e);
 }
 .card {
-    background: linear-gradient(135deg, #79df79, #a176a1);
+    background: linear-gradient(135deg, #ff8f8f, #c63e3e);
 }
 img {
     transition: transform 0.3s;
@@ -13,4 +13,31 @@ img {
 }
 img:hover {
     transform: scale(1.05);
+}
+#space {
+    padding-top: 100px;
+}
+
+/* Carousel styling */
+.carousel-item img {
+    filter: brightness(70%); /* lower = darker */
+}
+.caption-card {
+    background: rgba(245, 129, 129, 0.39); /* semi-transparent dark */
+    border-radius: 10px; /* rounded corner */
+    color: white; /* white text */
+    width: 350px; /* prevent card from being too wide */
+}
+.carousel-caption {
+    top: 0;
+    bottom: 0;
+}
+
+
+/* Mobile veiw (screens below 768px) */
+@media (max-width: 768px) {
+    .carousel-item img {
+    height: 500px; /* make taller on mobile */
+    object-fit: cover;
+    }
 }
