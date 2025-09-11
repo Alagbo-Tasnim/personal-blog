@@ -14,6 +14,22 @@
     <style>
         body {
             overflow-x: hidden;
+             background:#ffd5d5;
+        }
+
+        /* hide sections by default, show the active one */
+        .section {
+            display: none;
+        }
+
+        .active-section {
+            display: block;
+        }
+
+        /* optional small styling */
+        .container {
+            max-width: 450px;
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -21,51 +37,74 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-5" style="border: 1px solid black;">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3" style="border: 1px solid black;">
         <div class="container-fluid">
             <span class="navbar-brand">Admin Login/Register</span>
             <div>
-                <button class="btn btn-outline me-2" onclick="showSection('arrays')">login</button>
-                <button class="btn btn-outline me-2" onclick="showSection('dom')">register</button>
+                <!-- type="button" prevents accidental form submits -->
+                <button type="button" class="btn btn-outline-primary me-2" onclick="showSection('login')">Login</button>
+                <button type="button" class="btn btn-outline-secondary"
+                    onclick="showSection('register')">Register</button>
             </div>
         </div>
     </nav>
 
-    <div class="container" style="max-width: 450px;">
-        <!-- login Form -->
-        <div class="row section section-active" id="login">
-            <div class="col-md-12 mb-5">
-                <div class="section section-active">
-                    <div class="card">
-                        <div class="card-body">
-                            <form action="" method="post">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" name="password" id="password" class="form-control">
-                            </form>
+    <div class="container">
+        <!-- LOGIN -->
+        <div id="login" class="section active-section">
+            <div class="card">
+                <div class="card-header text-white" style="background: black;">Login</div>
+                <div class="card-body" style="background: linear-gradient(135deg, #ff8f8f, #c63e3e);">
+                    <h3>Login to post content</h3>
+                    <form id="loginForm" class="auth-form">
+                        <div class="mb-3">
+                            <label class="form-label" for="loginEmail">Email address</label>
+                            <input type="text" class="form-control" id="email" name="email">
                         </div>
-                    </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="loginPassword">Password</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <div class="formMsg mt-3"></div>
+                    </form>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div id="register" class="section section-active">
-                    <div class="card">
-                        <div class="card-body">
-                            <form action="" method="post">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" name="password" id="password" class="form-control">
-                                <label for="password" class="form-label">Confirm password</label>
-                                <input type="password" name="password" id="password" class="form-control">
-                            </form>
+        </div>
+
+        <!-- REGISTER -->
+        <div id="register" class="section">
+            <div class="card">
+                <div class="card-header text-white" style="background: black;">Register</div>
+                <div class="card-body" style="background: linear-gradient(135deg, #ff8f8f, #c63e3e);">
+                    <h3>Register an account below</h3>
+                    <form id="registerForm" class="auth-form">
+                        <div class="mb-3">
+                            <label class="form-label" for="regEmail">Email address</label>
+                            <input type="text" class="form-control" id="regEmail" name="email">
                         </div>
-                    </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="regPassword">Password</label>
+                            <input type="password" class="form-control" id="regPassword" name="password">
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <div class="formMsg mt-3"></div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        /* Section switcher */
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active-section'));
+            const el = document.getElementById(id);
+            if (el) el.classList.add('active-section');
+        };
+    </script>
+
+    <script type="module" src="login.js"></script>
 
 </body>
 

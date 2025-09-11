@@ -1,3 +1,6 @@
+body {
+    background: #ffd5d5;
+}
 #aside {
     background: linear-gradient(135deg, #ff8f8f, #c63e3e);
 }
@@ -40,4 +43,10 @@ img:hover {
     height: 500px; /* make taller on mobile */
     object-fit: cover;
     }
+
+    .footer {
+        display: hidden;
+        margin-bottom: 30px;
+    }
 }
+
