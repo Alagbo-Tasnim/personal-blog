@@ -1,36 +1,80 @@
 body {
     background: #ffd5d5;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri,;
 }
+
+#typewriter {
+    font-family: 'Pacifico', cursive;
+    white-space: nowrap;
+    border-right: 3px solid black;
+    width: fit-content;
+    overflow: hidden;
+    text-align: center;
+}
+.gradient-text {
+  font-size: 1.5rem;
+  font-family: 'Pacifico', cursive;
+  background: linear-gradient(270deg, #ff5c8a, #ffb347, #f6d365, #fda085);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 8s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.container-typewriter {
+   display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 10vh;     
+}
+
 #aside {
     background: linear-gradient(135deg, #ff8f8f, #c63e3e);
 }
+
 #nav {
     background: linear-gradient(135deg, #ff8f8f, #c63e3e);
 }
+
 .card {
     background: linear-gradient(135deg, #ff8f8f, #c63e3e);
 }
+
 img {
     transition: transform 0.3s;
     border-radius: 7px;
 }
+
 img:hover {
     transform: scale(1.05);
 }
+
 #space {
     padding-top: 100px;
 }
 
 /* Carousel styling */
 .carousel-item img {
-    filter: brightness(70%); /* lower = darker */
+    filter: brightness(70%);
+    /* lower = darker */
 }
+
 .caption-card {
-    background: rgba(245, 129, 129, 0.39); /* semi-transparent dark */
-    border-radius: 10px; /* rounded corner */
-    color: white; /* white text */
-    width: 350px; /* prevent card from being too wide */
+    background: rgba(245, 129, 129, 0.39);
+    /* semi-transparent dark */
+    border-radius: 10px;
+    /* rounded corner */
+    color: white;
+    /* white text */
+    width: 350px;
+    /* prevent card from being too wide */
 }
+
 .carousel-caption {
     top: 0;
     bottom: 0;
@@ -40,8 +84,9 @@ img:hover {
 /* Mobile veiw (screens below 768px) */
 @media (max-width: 768px) {
     .carousel-item img {
-    height: 500px; /* make taller on mobile */
-    object-fit: cover;
+        height: 500px;
+        /* make taller on mobile */
+        object-fit: cover;
     }
 
     .footer {
@@ -49,4 +94,3 @@ img:hover {
         margin-bottom: 30px;
     }
 }
-

@@ -44,6 +44,9 @@
             <div class="row">
                 <div class="col-md-12 text-center p-3">
                     <h1>PastryBlog</h1>
+                    <div class="container-typewriter">
+                    <h3 id="typewriter" class="gradient-text"></h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -369,6 +372,49 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"
         integrity="sha512-Tc0i+vRogmX4NN7tuLbQfBxa8JkfUSAxSFVzmU31nVdHyiHElPPy2cWfFacmCJKw0VqovrzKhdd2TSTMdAxp2g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script>document.addEventListener('DOMContentLoaded', () => {
+  const words = ["Freshly Baked","Bite-Sized Happiness","Crispy on the Outside, Soft Inside","Made with Love","Sweet Treats"];
+  const el = document.getElementById('typewriter');
+  if (!el) return;
+
+  const typingSpeed = 90;    // ms per character
+  const erasingSpeed = 45;   // ms per character when deleting
+  const pauseAfterTyped = 1200; // pause after a word is fully typed
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function tick() {
+    const current = words[wordIndex];
+    const letters = Array.from(current); // handles emojis and complex chars
+
+    if (!isDeleting) {
+      // type
+      el.textContent = letters.slice(0, charIndex + 1).join('');
+      charIndex++;
+      if (charIndex === letters.length) {
+        isDeleting = true;
+        setTimeout(tick, pauseAfterTyped);
+        return;
+      }
+    } else {
+      // delete
+      el.textContent = letters.slice(0, charIndex - 1).join('');
+      charIndex--;
+      if (charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+    }
+
+    setTimeout(tick, isDeleting ? erasingSpeed : typingSpeed);
+  }
+
+  tick();
+});
+</script>
 </body>
 
 </html>
