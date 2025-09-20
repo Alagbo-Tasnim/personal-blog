@@ -14,7 +14,7 @@ body {
 .gradient-text {
   font-size: 1.5rem;
   font-family: 'Pacifico', cursive;
-  background: linear-gradient(270deg, #ff5c8a, #ffb347, #f6d365, #fda085);
+  background: linear-gradient(270deg, #720020, #ff9500, #ffc400, #721900);
   background-size: 600% 600%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
